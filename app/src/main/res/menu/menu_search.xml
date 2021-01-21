@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	
+	<item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search_18dp"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        android:title="Search"/>
+	
+    <item
+        android:id="@+id/item"
+        android:title="setting"
+		android:icon="@drawable/ic_info"
+		app:showAsAction="always"/>
+    
+</menu>
