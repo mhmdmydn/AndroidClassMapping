@@ -16,6 +16,7 @@ import android.content.ClipboardManager;
 import android.content.ClipData;
 import java.util.ArrayList;
 import android.widget.Toast;
+import com.google.android.material.snackbar.*;
 
 public class ListviewSupportAdapter extends BaseAdapter implements Filterable {
 	
@@ -52,7 +53,7 @@ public class ListviewSupportAdapter extends BaseAdapter implements Filterable {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder viewHolder;
 		if(convertView == null ){
-			convertView = LayoutInflater.from(context).inflate(R.layout.list_item2, parent, false);
+			convertView = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
 			viewHolder = new ViewHolder(convertView);
 			convertView.setTag(viewHolder);
 		} else{
@@ -69,7 +70,7 @@ public class ListviewSupportAdapter extends BaseAdapter implements Filterable {
 					ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE); 
 					ClipData clip = ClipData.newPlainText("Copy", cm.getText());
 					clipboard.setPrimaryClip(clip);
-					Toast.makeText(context, "Succesfull : "+ cm.getText(), 2).show();
+					Snackbar.make(v, "Succesfully copy to clipboard  :  " + cm.getText(), Snackbar.LENGTH_SHORT).show();
 				}
 			});
 
@@ -81,8 +82,8 @@ public class ListviewSupportAdapter extends BaseAdapter implements Filterable {
 		ImageView img;
 
 		public ViewHolder(View itemView){
-			textView = itemView.findViewById(R.id.title2);
-			img = itemView.findViewById(R.id.img2);
+			textView = itemView.findViewById(R.id.title);
+			img = itemView.findViewById(R.id.img);
 		}
 	}
 

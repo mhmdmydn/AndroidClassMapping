@@ -16,6 +16,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import androidx.appcompat.widget.SearchView;
+import android.content.*;
+import android.net.*;
 
 public class FragmentSupport extends Fragment {
 	
@@ -91,4 +93,18 @@ public class FragmentSupport extends Fragment {
 		super.onCreateOptionsMenu(menu, inflater);
 	}
 	
+		
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item){
+		switch(item.getItemId()){
+			case R.id.item:
+				startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://github.com/ghodel-dev")));
+				break;
+			default:
+				return true;
+		}
+
+
+		return super.onOptionsItemSelected(item);
+	}
 }

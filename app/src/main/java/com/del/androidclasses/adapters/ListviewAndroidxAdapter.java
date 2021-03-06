@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import android.content.ClipboardManager;
 import android.content.ClipData;
 import android.widget.Toast;
+import com.google.android.material.snackbar.*;
 
 public class ListviewAndroidxAdapter extends BaseAdapter implements Filterable {
 	
@@ -68,7 +69,8 @@ public class ListviewAndroidxAdapter extends BaseAdapter implements Filterable {
 					ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE); 
 					ClipData clip = ClipData.newPlainText("Copy", cm.getText2());
 					clipboard.setPrimaryClip(clip);
-					Toast.makeText(context, "Succesfull : "+ cm.getText2(), 2).show();
+					Snackbar.make(v, "Succesfully copy to clipboard  :  " + cm.getText2(), Snackbar.LENGTH_SHORT).show();
+					
 				}
 			});
 		
